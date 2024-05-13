@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="loggedIn.css">
+</head>
+<body>
+
+    <div class="text">
+        <img src="https://images.vexels.com/media/users/3/254402/isolated/preview/c7fe88114b99a5fdffbedace7d524e73-red-crab-semi-flat.png" height="250vh" width="auto">
+    </div>
+
+    <h1 class="text">Rezervace do restaurace Velký Krab</h1>
+
+    <div class="calendar">
+        <table>
+          <thead>
+            <tr>
+              <th>Pondělí</th>
+              <th>Úterý</th>
+              <th>Středa</th>
+              <th>Čtvrtek</th>
+              <th>Pátek</th>
+              <th>Sobota</th>
+              <th>Něděle</th>
+            </tr>
+          </thead>
+          <tbody id="calendarBody">
+          </tbody>
+        </table>
+    </div>
+    
+    <div class="reservation-form" id="reservationForm">
+        <h2>Rezervace:</h2>
+        <form>
+          <input type="text" placeholder="Čas v digitálních hodinách:" id="time" required><br>
+          <input type="number" placeholder="Kolik osob?" id="persons" min="1" required><br>
+          <button type="submit">Udělat rezervaci</button>
+        </form>
+    </div>
+
+    <div class="reservationText">
+        <h2>Rezervace v naší databázi:</h2>
+    </div>
+    
+    <div class="reservation-list">
+        <div class="reservations">
+            <ul id="reservationList"></ul>
+        </div>
+    </div>
+
+    
+    <script src="loggedIn.js"></script>
+</body>
+</html>
