@@ -1,40 +1,61 @@
-.calendar {
-    font-family: Arial, sans-serif;
+.calendar, .reservation-form, .reservationText, .reservations, .text {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.calendar, .reservation-form, .reservation-list {
     max-width: 600px;
     margin: 0 auto;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+.text img {
+    width: 30%;
+    height: auto;
+}
+
+.calendar {
+    display: flex;
+    font-family: Arial, sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
 .calendar table {
     border-collapse: collapse;
     width: 100%;
 }
+
 .calendar th, .calendar td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
     cursor: pointer;
 }
+
 .calendar th {
     background-color: #f2f2f2;
 }
+
 .calendar td:hover {
-    background-color: #e6e6e6;
+    background-color: green;
+    color: white;
 }
+
 .reservation-form {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    display: flex;
     text-align: center;
     margin-top: 5vh;
-    margin-left: 61vh;
-    margin-right: 61vh;
     background-color: #fff;
     border: 1px solid #ccc;
     padding: 20px;
     z-index: 1000;
+    flex-wrap: wrap;
 }
 
-.reservation-form input {
-    width: 100%;
+.reservation-form input, .reservation-form button {
+    width: calc(100% - 40px); /* Odčítáme padding z obou stran */
     margin-bottom: 10px;
 }
 
@@ -51,11 +72,11 @@
     cursor:pointer;
     box-shadow: rgb(81, 255, 0) 0px 5px 15px;
     color: rgb(0, 255, 0);
+    flex-wrap: wrap;
 }
 
 .reservation-list {
     margin-top: 20px;
-    display: flex;
     justify-content: center;
 }
 
@@ -78,25 +99,62 @@
     cursor:pointer;
     box-shadow: rgb(255, 63, 63) 0px 5px 15px;
     color: rgb(0, 0, 0);
+    flex-wrap: wrap;
 }
 
-.reservationText{
-    display: flex;
+.reservationText {
     text-decoration: underline;
     justify-content: center;
 }
 
 .reservations {
-    margin-left: 61vh;
-    margin-right: 61vh;
+    margin-bottom: 20px;
 }
 
-h1 {
+h1, h2 {
     text-decoration: underline;
     text-align: center;
 }
 
 .text {
-    display: flex;
     justify-content: center;
 }
+
+.services{
+    margin-bottom: 2vh;
+}
+
+.specials{
+    text-decoration: underline;
+}
+
+.selectIf {
+    margin-bottom: 2vh;
+}
+
+@media only screen and (min-width: 600px) {
+    .calendar, .reservation-form, .reservation-list {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .calendar, .reservation-form, .reservation-list {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .calendar, .reservation-form, .reservation-list {
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .calendar, .reservation-form, .reservation-list {
+        width: 60%;
+    }
+}
+

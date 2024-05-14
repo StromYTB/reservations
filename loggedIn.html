@@ -3,53 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Velký Krab - Rezervace</title>
+    <link rel="icon" type="image/x-icon" href="https://images.vexels.com/media/users/3/254402/isolated/preview/c7fe88114b99a5fdffbedace7d524e73-red-crab-semi-flat.png">
     <link rel="stylesheet" href="loggedIn.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <div class="text">
-        <img src="https://images.vexels.com/media/users/3/254402/isolated/preview/c7fe88114b99a5fdffbedace7d524e73-red-crab-semi-flat.png" height="250vh" width="auto">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="https://images.vexels.com/media/users/3/254402/isolated/preview/c7fe88114b99a5fdffbedace7d524e73-red-crab-semi-flat.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+        Velký Krab - Rezervace
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5500/Programování/36-rezervace/index.html">Odhlásit se</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
+  
 
-    <h1 class="text">Rezervace do restaurace Velký Krab</h1>
+  <div class="text">
+    <img src="https://images.vexels.com/media/users/3/254402/isolated/preview/c7fe88114b99a5fdffbedace7d524e73-red-crab-semi-flat.png" alt="Red Crab" height="250vh" width="auto">
+</div>
 
-    <div class="calendar">
-        <table>
-          <thead>
+<h1 class="text">Rezervace do restaurace Velký Krab</h1>
+
+<div class="calendar">
+    <table>
+        <thead>
             <tr>
-              <th>Pondělí</th>
-              <th>Úterý</th>
-              <th>Středa</th>
-              <th>Čtvrtek</th>
-              <th>Pátek</th>
-              <th>Sobota</th>
-              <th>Něděle</th>
+                <th>Po</th>
+                <th>Út</th>
+                <th>St</th>
+                <th>Čt</th>
+                <th>Pá</th>
+                <th>So</th>
+                <th>Ne</th>
             </tr>
-          </thead>
-          <tbody id="calendarBody">
-          </tbody>
-        </table>
-    </div>
-    
-    <div class="reservation-form" id="reservationForm">
-        <h2>Rezervace:</h2>
-        <form>
-          <input type="text" placeholder="Čas v digitálních hodinách:" id="time" required><br>
-          <input type="number" placeholder="Kolik osob?" id="persons" min="1" required><br>
-          <button type="submit">Udělat rezervaci</button>
-        </form>
-    </div>
+        </thead>
+        <tbody id="calendarBody">
+        </tbody>
+    </table>
+</div>
 
-    <div class="reservationText">
-        <h2>Rezervace v naší databázi:</h2>
+<div class="reservation-form" id="reservationForm">
+  <h2>Rezervace:</h2>
+  <form>
+      <input type="text" placeholder="Čas v digitálních hodinách:" id="time" required><br>
+      <input type="number" placeholder="Kolik osob?" id="persons" min="1" required><br>
+      <p class="specials">Naše předvolby jídel:</p>
+      <select class="services" id="services" >
+          <option>-</option>
+          <option >Vyberu si na místě</option>
+          <option >Řízek s hranolkami</option>
+          <option >Hovězí guláš</option>
+          <option >Svíčková</option>
+          <option >Kuřecí burger</option>
+      </select><br>
+      <p class="specials">Chcete rezervovat opakovaně? :</p>
+      <select class="selectIf" id="repeatFrequency">
+          <option>-</option>
+          <option value="none">Žádné opakování</option>
+          <option value="weekly">Týdně</option>
+          <option value="monthly">Měsíčně</option>
+      </select><br>
+      <button type="submit">Udělat rezervaci</button>
+  </form>
+</div>
+
+<div class="reservationText">
+    <h2>Rezervace v naší databázi:</h2>
+</div>
+
+<div class="reservation-list">
+    <div class="reservations">
+        <ul id="reservationList"></ul>
     </div>
-    
-    <div class="reservation-list">
-        <div class="reservations">
-            <ul id="reservationList"></ul>
-        </div>
-    </div>
+</div>
+
+
 
     
     <script src="loggedIn.js"></script>
